@@ -1,0 +1,13 @@
+/Users/Dawid/Nauka/Game Dev/Typespeed/target/debug/deps/quote-52424f59dddeb8f7.rmeta: /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.2/src/lib.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.2/src/ext.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.2/src/format.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.2/src/ident_fragment.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.2/src/to_tokens.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.2/src/runtime.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.2/src/spanned.rs
+
+/Users/Dawid/Nauka/Game Dev/Typespeed/target/debug/deps/libquote-52424f59dddeb8f7.rlib: /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.2/src/lib.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.2/src/ext.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.2/src/format.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.2/src/ident_fragment.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.2/src/to_tokens.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.2/src/runtime.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.2/src/spanned.rs
+
+/Users/Dawid/Nauka/Game Dev/Typespeed/target/debug/deps/quote-52424f59dddeb8f7.d: /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.2/src/lib.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.2/src/ext.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.2/src/format.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.2/src/ident_fragment.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.2/src/to_tokens.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.2/src/runtime.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.2/src/spanned.rs
+
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.2/src/lib.rs:
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.2/src/ext.rs:
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.2/src/format.rs:
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.2/src/ident_fragment.rs:
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.2/src/to_tokens.rs:
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.2/src/runtime.rs:
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.2/src/spanned.rs:

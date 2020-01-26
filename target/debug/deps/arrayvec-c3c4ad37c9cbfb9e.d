@@ -1,0 +1,12 @@
+/Users/Dawid/Nauka/Game Dev/Typespeed/target/debug/deps/arrayvec-c3c4ad37c9cbfb9e.rmeta: /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/arrayvec-0.5.1/src/lib.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/arrayvec-0.5.1/src/maybe_uninit.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/arrayvec-0.5.1/src/array.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/arrayvec-0.5.1/src/array_string.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/arrayvec-0.5.1/src/char.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/arrayvec-0.5.1/src/errors.rs
+
+/Users/Dawid/Nauka/Game Dev/Typespeed/target/debug/deps/libarrayvec-c3c4ad37c9cbfb9e.rlib: /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/arrayvec-0.5.1/src/lib.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/arrayvec-0.5.1/src/maybe_uninit.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/arrayvec-0.5.1/src/array.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/arrayvec-0.5.1/src/array_string.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/arrayvec-0.5.1/src/char.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/arrayvec-0.5.1/src/errors.rs
+
+/Users/Dawid/Nauka/Game Dev/Typespeed/target/debug/deps/arrayvec-c3c4ad37c9cbfb9e.d: /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/arrayvec-0.5.1/src/lib.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/arrayvec-0.5.1/src/maybe_uninit.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/arrayvec-0.5.1/src/array.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/arrayvec-0.5.1/src/array_string.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/arrayvec-0.5.1/src/char.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/arrayvec-0.5.1/src/errors.rs
+
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/arrayvec-0.5.1/src/lib.rs:
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/arrayvec-0.5.1/src/maybe_uninit.rs:
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/arrayvec-0.5.1/src/array.rs:
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/arrayvec-0.5.1/src/array_string.rs:
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/arrayvec-0.5.1/src/char.rs:
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/arrayvec-0.5.1/src/errors.rs:
