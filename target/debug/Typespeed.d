@@ -1,1 +1,1 @@
-/Users/Dawid/Nauka/Game\ Dev/Typespeed/target/debug/Typespeed: /Users/Dawid/Nauka/Game\ Dev/Typespeed/src/main.rs
+/Users/Dawid/Nauka/Game\ Dev/Typespeed/target/debug/typespeed: /Users/Dawid/Nauka/Game\ Dev/Typespeed/src/main.rs

@@ -1,0 +1,2 @@
+cargo:rustc-env=TYPENUM_BUILD_OP=/Users/Dawid/Nauka/Game Dev/Typespeed/target/debug/build/typenum-2dbb210080614d71/out/consts.rs
+cargo:rustc-env=TYPENUM_BUILD_CONSTS=/Users/Dawid/Nauka/Game Dev/Typespeed/target/debug/build/typenum-2dbb210080614d71/out/op.rs

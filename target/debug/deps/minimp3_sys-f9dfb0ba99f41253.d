@@ -1,0 +1,8 @@
+/Users/Dawid/Nauka/Game Dev/Typespeed/target/debug/deps/minimp3_sys-f9dfb0ba99f41253.rmeta: /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/minimp3-sys-0.3.1/src/lib.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/minimp3-sys-0.3.1/src/bindings.rs
+
+/Users/Dawid/Nauka/Game Dev/Typespeed/target/debug/deps/libminimp3_sys-f9dfb0ba99f41253.rlib: /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/minimp3-sys-0.3.1/src/lib.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/minimp3-sys-0.3.1/src/bindings.rs
+
+/Users/Dawid/Nauka/Game Dev/Typespeed/target/debug/deps/minimp3_sys-f9dfb0ba99f41253.d: /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/minimp3-sys-0.3.1/src/lib.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/minimp3-sys-0.3.1/src/bindings.rs
+
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/minimp3-sys-0.3.1/src/lib.rs:
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/minimp3-sys-0.3.1/src/bindings.rs:
