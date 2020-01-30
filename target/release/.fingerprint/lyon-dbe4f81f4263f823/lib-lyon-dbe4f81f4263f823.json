@@ -1,0 +1,1 @@
+{"rustc":1413680479590619863,"features":"[]","target":5003559503875191757,"profile":2574335274271406459,"path":9012221191150204041,"deps":[[17913488557987064814,"lyon_tessellation",false,10110249275873164719]],"local":[{"CheckDepInfo":{"dep_info":"release/.fingerprint/lyon-dbe4f81f4263f823/dep-lib-lyon-dbe4f81f4263f823"}}],"rustflags":[],"metadata":3170420564715255967}

@@ -1,0 +1,11 @@
+/Users/Dawid/Nauka/Game Dev/Typespeed/target/release/deps/slice_deque-3f4643828940959c.rmeta: /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/slice-deque-0.2.4/src/lib.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/slice-deque-0.2.4/src/macros.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/slice-deque-0.2.4/src/mirrored/mod.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/slice-deque-0.2.4/src/mirrored/buffer.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/slice-deque-0.2.4/src/mirrored/macos.rs
+
+/Users/Dawid/Nauka/Game Dev/Typespeed/target/release/deps/libslice_deque-3f4643828940959c.rlib: /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/slice-deque-0.2.4/src/lib.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/slice-deque-0.2.4/src/macros.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/slice-deque-0.2.4/src/mirrored/mod.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/slice-deque-0.2.4/src/mirrored/buffer.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/slice-deque-0.2.4/src/mirrored/macos.rs
+
+/Users/Dawid/Nauka/Game Dev/Typespeed/target/release/deps/slice_deque-3f4643828940959c.d: /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/slice-deque-0.2.4/src/lib.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/slice-deque-0.2.4/src/macros.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/slice-deque-0.2.4/src/mirrored/mod.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/slice-deque-0.2.4/src/mirrored/buffer.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/slice-deque-0.2.4/src/mirrored/macos.rs
+
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/slice-deque-0.2.4/src/lib.rs:
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/slice-deque-0.2.4/src/macros.rs:
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/slice-deque-0.2.4/src/mirrored/mod.rs:
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/slice-deque-0.2.4/src/mirrored/buffer.rs:
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/slice-deque-0.2.4/src/mirrored/macos.rs:

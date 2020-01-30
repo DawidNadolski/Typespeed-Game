@@ -1,0 +1,12 @@
+/Users/Dawid/Nauka/Game Dev/Typespeed/target/release/deps/lyon_path-57b278022bc84260.rmeta: /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/lyon_path-0.13.2/src/lib.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/lyon_path-0.13.2/src/events.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/lyon_path-0.13.2/src/path_state.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/lyon_path-0.13.2/src/path.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/lyon_path-0.13.2/src/iterator.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/lyon_path-0.13.2/src/builder.rs
+
+/Users/Dawid/Nauka/Game Dev/Typespeed/target/release/deps/liblyon_path-57b278022bc84260.rlib: /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/lyon_path-0.13.2/src/lib.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/lyon_path-0.13.2/src/events.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/lyon_path-0.13.2/src/path_state.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/lyon_path-0.13.2/src/path.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/lyon_path-0.13.2/src/iterator.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/lyon_path-0.13.2/src/builder.rs
+
+/Users/Dawid/Nauka/Game Dev/Typespeed/target/release/deps/lyon_path-57b278022bc84260.d: /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/lyon_path-0.13.2/src/lib.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/lyon_path-0.13.2/src/events.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/lyon_path-0.13.2/src/path_state.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/lyon_path-0.13.2/src/path.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/lyon_path-0.13.2/src/iterator.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/lyon_path-0.13.2/src/builder.rs
+
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/lyon_path-0.13.2/src/lib.rs:
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/lyon_path-0.13.2/src/events.rs:
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/lyon_path-0.13.2/src/path_state.rs:
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/lyon_path-0.13.2/src/path.rs:
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/lyon_path-0.13.2/src/iterator.rs:
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/lyon_path-0.13.2/src/builder.rs:

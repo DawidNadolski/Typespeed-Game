@@ -1,0 +1,9 @@
+/Users/Dawid/Nauka/Game Dev/Typespeed/target/release/deps/num_complex-069914548c81bbd7.rmeta: /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/num-complex-0.2.4/src/lib.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/num-complex-0.2.4/src/cast.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/num-complex-0.2.4/src/pow.rs
+
+/Users/Dawid/Nauka/Game Dev/Typespeed/target/release/deps/libnum_complex-069914548c81bbd7.rlib: /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/num-complex-0.2.4/src/lib.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/num-complex-0.2.4/src/cast.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/num-complex-0.2.4/src/pow.rs
+
+/Users/Dawid/Nauka/Game Dev/Typespeed/target/release/deps/num_complex-069914548c81bbd7.d: /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/num-complex-0.2.4/src/lib.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/num-complex-0.2.4/src/cast.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/num-complex-0.2.4/src/pow.rs
+
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/num-complex-0.2.4/src/lib.rs:
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/num-complex-0.2.4/src/cast.rs:
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/num-complex-0.2.4/src/pow.rs:

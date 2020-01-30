@@ -1,0 +1,13 @@
+/Users/Dawid/Nauka/Game Dev/Typespeed/target/release/deps/claxon-6cdf94e0699ffb15.rmeta: /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/claxon-0.4.2/src/lib.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/claxon-0.4.2/src/crc.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/claxon-0.4.2/src/error.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/claxon-0.4.2/src/frame.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/claxon-0.4.2/src/input.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/claxon-0.4.2/src/metadata.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/claxon-0.4.2/src/subframe.rs
+
+/Users/Dawid/Nauka/Game Dev/Typespeed/target/release/deps/libclaxon-6cdf94e0699ffb15.rlib: /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/claxon-0.4.2/src/lib.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/claxon-0.4.2/src/crc.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/claxon-0.4.2/src/error.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/claxon-0.4.2/src/frame.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/claxon-0.4.2/src/input.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/claxon-0.4.2/src/metadata.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/claxon-0.4.2/src/subframe.rs
+
+/Users/Dawid/Nauka/Game Dev/Typespeed/target/release/deps/claxon-6cdf94e0699ffb15.d: /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/claxon-0.4.2/src/lib.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/claxon-0.4.2/src/crc.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/claxon-0.4.2/src/error.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/claxon-0.4.2/src/frame.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/claxon-0.4.2/src/input.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/claxon-0.4.2/src/metadata.rs /Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/claxon-0.4.2/src/subframe.rs
+
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/claxon-0.4.2/src/lib.rs:
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/claxon-0.4.2/src/crc.rs:
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/claxon-0.4.2/src/error.rs:
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/claxon-0.4.2/src/frame.rs:
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/claxon-0.4.2/src/input.rs:
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/claxon-0.4.2/src/metadata.rs:
+/Users/Dawid/.cargo/registry/src/github.com-1ecc6299db9ec823/claxon-0.4.2/src/subframe.rs:
