@@ -18,11 +18,12 @@ pub struct Word {
     y_pos: f32,
     pub associated_string: String,
     speed: f32,
+    pub rank: i32,
 }
 
 impl Word {
 
-    pub fn new(_context: &mut Context, word: &str, speed: f32) -> GameResult<Word> {
+    pub fn new(word: &str, speed: f32) -> GameResult<Word> {
         let mut rng = rand::thread_rng();
         let random_y_pos = rng.gen_range(0.0, BOTTOM_EDGE_BOUND - 2.0 * SCORE_BOX_HEIGHT);
 
@@ -31,16 +32,29 @@ impl Word {
             y_pos: random_y_pos,
             associated_string: String::from(word),
             speed: speed,
+            rank: word.len() as i32,
         })
     }
 
-    pub fn new_text_input_word(_context: &mut Context) -> GameResult<Word> {
+    pub fn new_text_input() -> GameResult<Word> {
 
         Ok(Word { 
-            x_pos: 10.0, 
+            x_pos: 15.0, 
             y_pos: 673.0,
             associated_string: String::new(),
             speed: 0.0,
+            rank: 0,
+        })
+    }
+
+    pub fn new_score_label() -> GameResult<Word> {
+        
+        Ok(Word {
+            x_pos: 617.0,
+            y_pos: 673.0,
+            associated_string: String::from("Score: 0"),
+            speed: 0.0,
+            rank: 0,
         })
     }
 

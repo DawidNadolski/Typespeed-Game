@@ -1,5 +1,7 @@
 mod word;
+mod lives;
 use word::*;
+use lives::*;
 
 use ggez::{event, graphics, Context, GameResult};
 
@@ -13,10 +15,12 @@ use std::time::{Duration, Instant};
 
 const BACKGROUND_COLOR: graphics::Color = graphics::Color::new(0.1, 0.2, 0.3, 1.0);
 
-const SCORE_BOX_FIELD: graphics::Rect = graphics::Rect::new(0.0, 670.0, 640.0, 50.0);
+const SCORE_BOX_FIELD: graphics::Rect = graphics::Rect::new(0.0, 670.0, 600.0, 50.0);
 const SCORE_BOX_COLOR: graphics::Color = graphics::Color::new(0.4, 0.2, 0.0, 1.0);
+const BOTTOM_LINE_CORDS: &[mint::Point2<f32>] = &[(mint::Point2 {x: 0.0, y: 667.0}), (mint::Point2 {x: 1280.0, y: 667.0})];
+const MIDDLE_LINE_CORDS: &[mint::Point2<f32>] = &[(mint::Point2 {x: 602.0, y: 667.0}), (mint::Point2 {x: 602.0, y: 720.0})];
 
-const INITIAL_TIME_TO_SPAWN: f32 = 3.0;
+const INITIAL_TIME_TO_SPAWN: f32 = 2.0;
 const INITIAL_WORD_SPEED: f32 = 1.0;
 
 const RIGHT_EDGE_BOUND: f32 = 1280.0;
@@ -27,7 +31,11 @@ struct GameState {
     entered_word: Word,
     seconds_to_spawn: f32,
     last_update: Instant,
-    words_speed: f32
+    time_to_next_level: Instant,
+    words_speed: f32,
+    score: i32,
+    score_label: Word,
+    life: Lives,
 }
 
 impl GameState {
@@ -37,14 +45,19 @@ impl GameState {
         let path = Path::new("/Users/Dawid/Nauka/Game Dev/Typespeed/resources/english_vocabulary.txt");
         let words_from_file = lines_from_file(path);
         let vocabulary: Vec<String> = words_from_file.split_whitespace().map(|x| x.to_string()).collect();
+        
 
         Ok(GameState {
             words: Vec::new(),
             vocabulary: vocabulary,
-            entered_word: Word::new_text_input_word(context).unwrap(),
+            entered_word: Word::new_text_input().unwrap(),
             seconds_to_spawn: INITIAL_TIME_TO_SPAWN,
             last_update: Instant::now(),
-            words_speed: INITIAL_WORD_SPEED
+            time_to_next_level: Instant::now(),
+            score: 0,
+            words_speed: 1.0,
+            score_label: Word::new_score_label().unwrap(),
+            life: Lives::new(context).unwrap(),
         })
     }
 
@@ -53,7 +66,15 @@ impl GameState {
 
         let score_box: graphics::Mesh = graphics::Mesh::new_rectangle(context, graphics::DrawMode::fill(), SCORE_BOX_FIELD, SCORE_BOX_COLOR)
             .expect("main.rs/GameState/draw(): Couldn't create ScoreBox rectangle");
-        graphics::draw(context, &score_box, (ggez::mint::Point2 { x: 0.0, y: 0.0 },))
+        let bottom_line: graphics::Mesh = graphics::Mesh::new_line(context, BOTTOM_LINE_CORDS, 5.0, [0.0, 0.0, 0.0, 1.0].into())
+            .expect("main.rs/GameState/draw(): Couldn't create bottom_line");
+        let middle_line: graphics::Mesh = graphics::Mesh::new_line(context, MIDDLE_LINE_CORDS, 5.0, [0.0, 0.0, 0.0, 1.0].into())
+            .expect("main.rs/GameState/draw(): Couldn't create middle_line");    
+        graphics::draw(context, &bottom_line, (mint::Point2 { x: 0.0, y: 0.0 },))
+            .expect("main.rs/GameState/draw(): Couldn't draw bottom_line");
+        graphics::draw(context, &middle_line, (mint::Point2 { x: 0.0, y: 0.0 },))
+            .expect("main.rs/GameState/draw(): Couldn't draw middle_line");
+        graphics::draw(context, &score_box, (mint::Point2 { x: 0.0, y: 0.0 },))
             .expect("main.rs/GameState/draw(): Couldn't draw ScoreBox");
 
         for word in &mut self.words {
@@ -64,19 +85,35 @@ impl GameState {
         self.entered_word.draw(context)
             .expect("main.rs/GameState/draw(): Couldn't draw typed word");
         
+        self.score_label.draw(context)
+            .expect("main.rs/GameState/draw(): Couldn't draw typed word");
+
+        self.life.draw(context)
+            .expect("CHUJ");
+        
         Ok(())
     }
 }
 
 impl event::EventHandler for GameState {
-    fn update(&mut self, context: &mut Context) -> GameResult {
+    fn update(&mut self, _context: &mut Context) -> GameResult {
         if let Some(index) = self.words.iter().position(|word| word.x_pos > RIGHT_EDGE_BOUND) {
             self.words.remove(index);
+            self.life.hearts.pop();
         }
+
+        if Instant::now().duration_since(self.time_to_next_level) > Duration::from_secs_f32(20.0) {
+            self.seconds_to_spawn -= 0.3 as f32;
+            self.words_speed += 0.3 as f32;
+            self.time_to_next_level = Instant::now();
+            println!("Seconds: {}, speed: {}", self.seconds_to_spawn, self.words_speed);
+        }
+
+        
         
         if Instant::now().duration_since(self.last_update) > Duration::from_secs_f32(self.seconds_to_spawn) {
             let new_word = self.vocabulary.choose(&mut rand::thread_rng()).unwrap();
-            self.words.push(Word::new(context, new_word, self.words_speed).unwrap());
+            self.words.push(Word::new(new_word, self.words_speed).unwrap());
             self.last_update = Instant::now();
         }
         Ok(())
@@ -95,9 +132,11 @@ impl event::EventHandler for GameState {
             self.entered_word.associated_string.push(ch);
         } else {   
             if let Some(index) = self.words.iter().position(|word| word.associated_string == self.entered_word.associated_string) {
+                self.score += self.words[index].rank;
+                self.score_label.associated_string = format!("Score: {}", self.score.to_string());
                 self.words.remove(index);
             } else {
-                println!("Entered word doesn't match with any on the screen");
+                self.life.hearts.pop();
             }
 
             self.entered_word.associated_string = String::new();
