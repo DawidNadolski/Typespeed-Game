@@ -10,8 +10,8 @@ const FONT_SIZE: f32 = 40.0;
 const SCORE_BOX_HEIGHT: f32 = FONT_SIZE + 10.0;
 
 const NEUTRAL_COLOR: graphics::Color = graphics::Color::new(1.0, 1.0, 1.0, 1.0);
-const WARNING_COLOR: graphics::Color = graphics::Color::new(1.0, 1.0, 0.0, 1.0);
-const HIGH_RISK_COLOR: graphics::Color = graphics::Color::new(1.0, 0.0, 0.0, 1.0);
+const WARNING_COLOR: graphics::Color = graphics::Color::new(240.0/255.0, 207.0/255.0, 101.0/255.0, 1.0);
+const HIGH_RISK_COLOR: graphics::Color = graphics::Color::new(252.0/255.0, 68.0/255.0, 15.0/255.0, 1.0);
 
 pub struct Word {
     pub x_pos: f32,

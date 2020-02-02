@@ -1,7 +1,6 @@
 use cgmath::Point2;
 use ggez::{graphics, Context, GameResult};
-use ggez::graphics::{spritebatch::SpriteBatch, Image, FilterMode};
-use rand::Rng;
+use ggez::graphics::{spritebatch::SpriteBatch, Image};
 
 const HEARTS_SPACE: f32 = 40.0;
 const HEART_X_POS: f32 = 855.0;
@@ -19,7 +18,8 @@ impl Lives {
         for ith_heart in 0..10 {
             hearts_vec.push(mint::Point2 {
                 x: HEART_X_POS + (ith_heart as f32) * HEARTS_SPACE, 
-                y: HEART_Y_POS});
+                y: HEART_Y_POS
+            });
         }
 
         let texture = Image::new(context, "/heart.png")

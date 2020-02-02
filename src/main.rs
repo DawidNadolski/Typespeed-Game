@@ -13,10 +13,10 @@ use std::env;
 use std::path::{Path,PathBuf};
 use std::time::{Duration, Instant};
 
-const BACKGROUND_COLOR: graphics::Color = graphics::Color::new(0.1, 0.2, 0.3, 1.0);
+const BACKGROUND_COLOR: graphics::Color = graphics::Color::new(63.0/255.0, 94.0/255.0, 90.0/255.0, 1.0);
 
-const SCORE_BOX_FIELD: graphics::Rect = graphics::Rect::new(0.0, 670.0, 600.0, 50.0);
-const SCORE_BOX_COLOR: graphics::Color = graphics::Color::new(0.4, 0.2, 0.0, 1.0);
+const SCORE_BOX_FIELD: graphics::Rect = graphics::Rect::new(0.0, 669.0, 600.0, 51.0);
+const SCORE_BOX_COLOR: graphics::Color = graphics::Color::new(56.0/255.0, 66.0/255.0, 59.0/255.0, 1.0);
 const BOTTOM_LINE_CORDS: &[mint::Point2<f32>] = &[(mint::Point2 {x: 0.0, y: 667.0}), (mint::Point2 {x: 1280.0, y: 667.0})];
 const MIDDLE_LINE_CORDS: &[mint::Point2<f32>] = &[(mint::Point2 {x: 602.0, y: 667.0}), (mint::Point2 {x: 602.0, y: 720.0})];
 
@@ -55,7 +55,7 @@ impl GameState {
             last_update: Instant::now(),
             time_to_next_level: Instant::now(),
             score: 0,
-            words_speed: 1.0,
+            words_speed: INITIAL_WORD_SPEED,
             score_label: Word::new_score_label().unwrap(),
             life: Lives::new(context).unwrap(),
         })
