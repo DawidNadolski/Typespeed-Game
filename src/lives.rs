@@ -1,4 +1,3 @@
-use cgmath::Point2;
 use ggez::{graphics, Context, GameResult};
 use ggez::graphics::{spritebatch::SpriteBatch, Image};
 

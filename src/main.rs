@@ -13,15 +13,20 @@ use std::env;
 use std::path::{Path,PathBuf};
 use std::time::{Duration, Instant};
 
+const WORD_HEIGHTS: Vec<f32> = vec![0.3, 41.6, 82.9, 124.2, 165.5, 206.8, 248.1, 289.4, 330.7, 372.0, 413.3, 454.6, 495.9, 537.2, 578.5];
+
 const BACKGROUND_COLOR: graphics::Color = graphics::Color::new(63.0/255.0, 94.0/255.0, 90.0/255.0, 1.0);
 
-const SCORE_BOX_FIELD: graphics::Rect = graphics::Rect::new(0.0, 669.0, 600.0, 51.0);
+const SCORE_BOX_FIELD: graphics::Rect = graphics::Rect::new(0.0, 669.0, 1280.0, 51.0);
 const SCORE_BOX_COLOR: graphics::Color = graphics::Color::new(56.0/255.0, 66.0/255.0, 59.0/255.0, 1.0);
 const BOTTOM_LINE_CORDS: &[mint::Point2<f32>] = &[(mint::Point2 {x: 0.0, y: 667.0}), (mint::Point2 {x: 1280.0, y: 667.0})];
 const MIDDLE_LINE_CORDS: &[mint::Point2<f32>] = &[(mint::Point2 {x: 602.0, y: 667.0}), (mint::Point2 {x: 602.0, y: 720.0})];
 
 const INITIAL_TIME_TO_SPAWN: f32 = 2.0;
 const INITIAL_WORD_SPEED: f32 = 1.0;
+
+const SPEED_PER_LEVEL: f32 = 0.3;
+const TIME_PER_LEVEL: f32 = 1.1;
 
 const RIGHT_EDGE_BOUND: f32 = 1280.0;
 
@@ -46,7 +51,6 @@ impl GameState {
         let words_from_file = lines_from_file(path);
         let vocabulary: Vec<String> = words_from_file.split_whitespace().map(|x| x.to_string()).collect();
         
-
         Ok(GameState {
             words: Vec::new(),
             vocabulary: vocabulary,
@@ -70,13 +74,14 @@ impl GameState {
             .expect("main.rs/GameState/draw(): Couldn't create bottom_line");
         let middle_line: graphics::Mesh = graphics::Mesh::new_line(context, MIDDLE_LINE_CORDS, 5.0, [0.0, 0.0, 0.0, 1.0].into())
             .expect("main.rs/GameState/draw(): Couldn't create middle_line");    
+        
+        graphics::draw(context, &score_box, (mint::Point2 { x: 0.0, y: 0.0 },))
+            .expect("main.rs/GameState/draw(): Couldn't draw ScoreBox");
         graphics::draw(context, &bottom_line, (mint::Point2 { x: 0.0, y: 0.0 },))
             .expect("main.rs/GameState/draw(): Couldn't draw bottom_line");
         graphics::draw(context, &middle_line, (mint::Point2 { x: 0.0, y: 0.0 },))
             .expect("main.rs/GameState/draw(): Couldn't draw middle_line");
-        graphics::draw(context, &score_box, (mint::Point2 { x: 0.0, y: 0.0 },))
-            .expect("main.rs/GameState/draw(): Couldn't draw ScoreBox");
-
+        
         for word in &mut self.words {
             word.draw(context)
                 .expect("main.rs/GameState/draw(): Couldn't draw word");
@@ -89,7 +94,7 @@ impl GameState {
             .expect("main.rs/GameState/draw(): Couldn't draw typed word");
 
         self.life.draw(context)
-            .expect("CHUJ");
+            .expect("main.rs/GameState/draw(): Couldn't draw life");
         
         Ok(())
     }
@@ -103,14 +108,12 @@ impl event::EventHandler for GameState {
         }
 
         if Instant::now().duration_since(self.time_to_next_level) > Duration::from_secs_f32(20.0) {
-            self.seconds_to_spawn -= 0.3 as f32;
-            self.words_speed += 0.3 as f32;
+            self.seconds_to_spawn /= TIME_PER_LEVEL as f32;
+            self.words_speed += SPEED_PER_LEVEL as f32;
             self.time_to_next_level = Instant::now();
             println!("Seconds: {}, speed: {}", self.seconds_to_spawn, self.words_speed);
         }
 
-        
-        
         if Instant::now().duration_since(self.last_update) > Duration::from_secs_f32(self.seconds_to_spawn) {
             let new_word = self.vocabulary.choose(&mut rand::thread_rng()).unwrap();
             self.words.push(Word::new(new_word, self.words_speed).unwrap());
@@ -128,7 +131,7 @@ impl event::EventHandler for GameState {
     }
 
     fn text_input_event(&mut self, _context: &mut Context, ch: char) {
-        if ch != 13 as char {
+        if ch != 13 as char && self.entered_word.associated_string.len() < 16 {
             self.entered_word.associated_string.push(ch);
         } else {   
             if let Some(index) = self.words.iter().position(|word| word.associated_string == self.entered_word.associated_string) {
