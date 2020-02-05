@@ -1,7 +1,9 @@
 mod word;
 mod lives;
+mod game_stats;
 use word::*;
 use lives::*;
+use game_stats::*;
 
 use ggez::{event, graphics, Context, GameResult};
 
@@ -13,9 +15,8 @@ use std::env;
 use std::path::{Path,PathBuf};
 use std::time::{Duration, Instant};
 
-const WORD_HEIGHTS: Vec<f32> = vec![0.3, 41.6, 82.9, 124.2, 165.5, 206.8, 248.1, 289.4, 330.7, 372.0, 413.3, 454.6, 495.9, 537.2, 578.5];
-
 const BACKGROUND_COLOR: graphics::Color = graphics::Color::new(63.0/255.0, 94.0/255.0, 90.0/255.0, 1.0);
+const RIGHT_EDGE_BOUND: f32 = 1280.0;
 
 const SCORE_BOX_FIELD: graphics::Rect = graphics::Rect::new(0.0, 669.0, 1280.0, 51.0);
 const SCORE_BOX_COLOR: graphics::Color = graphics::Color::new(56.0/255.0, 66.0/255.0, 59.0/255.0, 1.0);
@@ -24,23 +25,26 @@ const MIDDLE_LINE_CORDS: &[mint::Point2<f32>] = &[(mint::Point2 {x: 602.0, y: 66
 
 const INITIAL_TIME_TO_SPAWN: f32 = 2.0;
 const INITIAL_WORD_SPEED: f32 = 1.0;
+const SPEED_PER_LEVEL: f32 = 0.15;
+const TIME_PER_LEVEL: f32 = 1.3;
 
-const SPEED_PER_LEVEL: f32 = 0.3;
-const TIME_PER_LEVEL: f32 = 1.1;
-
-const RIGHT_EDGE_BOUND: f32 = 1280.0;
+const ENTER: char = 13 as char;
+const BACKSPACE: char = 127 as char;
 
 struct GameState {
     words: Vec<Word>,
+    possible_heights: Vec<f32>,
     vocabulary: Vec<String>,
     entered_word: Word,
     seconds_to_spawn: f32,
     last_update: Instant,
-    time_to_next_level: Instant,
     words_speed: f32,
     score: i32,
+    matched_words: i32,
+    level: i32,
     score_label: Word,
     life: Lives,
+    gameover: bool,
 }
 
 impl GameState {
@@ -50,18 +54,22 @@ impl GameState {
         let path = Path::new("/Users/Dawid/Nauka/Game Dev/Typespeed/resources/english_vocabulary.txt");
         let words_from_file = lines_from_file(path);
         let vocabulary: Vec<String> = words_from_file.split_whitespace().map(|x| x.to_string()).collect();
-        
+        let heights: Vec<f32> = vec![0.3, 41.6, 82.9, 124.2, 165.5, 206.8, 248.1, 289.4, 330.7, 372.0, 413.3, 454.6, 495.9, 537.2, 578.5];
+
         Ok(GameState {
             words: Vec::new(),
+            possible_heights: heights,
             vocabulary: vocabulary,
             entered_word: Word::new_text_input().unwrap(),
             seconds_to_spawn: INITIAL_TIME_TO_SPAWN,
             last_update: Instant::now(),
-            time_to_next_level: Instant::now(),
             score: 0,
+            matched_words: 0,
             words_speed: INITIAL_WORD_SPEED,
+            level: 1,
             score_label: Word::new_score_label().unwrap(),
             life: Lives::new(context).unwrap(),
+            gameover: false,
         })
     }
 
@@ -102,40 +110,73 @@ impl GameState {
 
 impl event::EventHandler for GameState {
     fn update(&mut self, _context: &mut Context) -> GameResult {
-        if let Some(index) = self.words.iter().position(|word| word.x_pos > RIGHT_EDGE_BOUND) {
-            self.words.remove(index);
-            self.life.hearts.pop();
+        
+        if !self.gameover {
+            if let Some(index) = self.words.iter().position(|word| word.x_pos > RIGHT_EDGE_BOUND) {
+                self.words.remove(index);
+                self.life.hearts.pop();
+            }
+
+            if self.life.hearts.len() == 0 { 
+                self.gameover = true; 
+            }
+
+            if self.score > self.level * 100 {
+                self.level += 1;
+                self.seconds_to_spawn /= TIME_PER_LEVEL as f32;
+                self.words_speed += SPEED_PER_LEVEL as f32;
+                println!("Seconds: {}, speed: {}", self.seconds_to_spawn, self.words_speed);
+            }
+
+            if Instant::now().duration_since(self.last_update) > Duration::from_secs_f32(self.seconds_to_spawn) {
+
+                if self.possible_heights.is_empty() {
+                    self.possible_heights = vec![0.3, 41.6, 82.9, 124.2, 165.5, 206.8, 248.1, 289.4, 330.7, 372.0, 413.3, 454.6, 495.9, 537.2, 578.5];
+                }
+
+                let random_word = self.vocabulary.choose(&mut rand::thread_rng()).unwrap();
+                let random_y_pos = self.possible_heights.choose(&mut rand::thread_rng()).unwrap();
+                let new_word = Word::new(random_word, self.words_speed, *random_y_pos).unwrap();
+                
+                self.words.push(new_word);
+                
+                if let Some(index) = self.possible_heights.iter().position(|y_pos| y_pos == random_y_pos) {
+                    self.possible_heights.remove(index);
+                }
+                
+                self.last_update = Instant::now();
+            }
         }
 
-        if Instant::now().duration_since(self.time_to_next_level) > Duration::from_secs_f32(20.0) {
-            self.seconds_to_spawn /= TIME_PER_LEVEL as f32;
-            self.words_speed += SPEED_PER_LEVEL as f32;
-            self.time_to_next_level = Instant::now();
-            println!("Seconds: {}, speed: {}", self.seconds_to_spawn, self.words_speed);
-        }
-
-        if Instant::now().duration_since(self.last_update) > Duration::from_secs_f32(self.seconds_to_spawn) {
-            let new_word = self.vocabulary.choose(&mut rand::thread_rng()).unwrap();
-            self.words.push(Word::new(new_word, self.words_speed).unwrap());
-            self.last_update = Instant::now();
-        }
         Ok(())
     }
 
     fn draw(&mut self, context: &mut Context) -> GameResult {
-        self.draw(context)
-            .expect("main.rs/EventHandler/draw(): Couldn't draw GameState");
+        if !self.gameover {
+            self.draw(context)
+                .expect("main.rs/EventHandler/draw(): Couldn't draw GameState");
+        } else {
+            graphics::clear(context, BACKGROUND_COLOR);
+            let mut go = GameStats::new(self.score, self.matched_words, self.level).unwrap();
+            go.draw(context)
+                .expect("main.rs/EventHandler/draw(): Couldn't draw GameStats");
+        }
         graphics::present(context)
-            .expect("main.rs/EventHandler/draw(): Couldn't draw present context");
+                .expect("main.rs/EventHandler/draw(): Couldn't draw present context");
+
         Ok(())
     }
 
     fn text_input_event(&mut self, _context: &mut Context, ch: char) {
-        if ch != 13 as char && self.entered_word.associated_string.len() < 16 {
+        println!("{}", ch as i32);
+        if ch == BACKSPACE {
+            self.entered_word.associated_string.pop();
+        } else if ch != ENTER as char && self.entered_word.associated_string.len() < 16 {
             self.entered_word.associated_string.push(ch);
         } else {   
             if let Some(index) = self.words.iter().position(|word| word.associated_string == self.entered_word.associated_string) {
                 self.score += self.words[index].rank;
+                self.matched_words += 1;
                 self.score_label.associated_string = format!("Score: {}", self.score.to_string());
                 self.words.remove(index);
             } else {

@@ -1,13 +1,8 @@
 use cgmath::Point2;
 use ggez::{graphics, Context, GameResult};
 use ggez::graphics::{Scale, Text};
-use rand::Rng;
-
-const BOTTOM_EDGE_BOUND: f32 = 720.0;
 
 const FONT_SIZE: f32 = 40.0;
-
-const SCORE_BOX_HEIGHT: f32 = FONT_SIZE + 10.0;
 
 const NEUTRAL_COLOR: graphics::Color = graphics::Color::new(1.0, 1.0, 1.0, 1.0);
 const WARNING_COLOR: graphics::Color = graphics::Color::new(240.0/255.0, 207.0/255.0, 101.0/255.0, 1.0);
@@ -23,13 +18,11 @@ pub struct Word {
 
 impl Word {
 
-    pub fn new(word: &str, speed: f32) -> GameResult<Word> {
-        let mut rng = rand::thread_rng();
-        let random_y_pos = rng.gen_range(0.0, BOTTOM_EDGE_BOUND - 2.0 * SCORE_BOX_HEIGHT);
+    pub fn new(word: &str, speed: f32, y_pos: f32) -> GameResult<Word> {
 
         Ok(Word { 
             x_pos: -250.0, 
-            y_pos: random_y_pos,
+            y_pos: y_pos,
             associated_string: String::from(word),
             speed: speed,
             rank: word.len() as i32,
