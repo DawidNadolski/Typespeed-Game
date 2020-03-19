@@ -23,10 +23,10 @@ const SCORE_BOX_COLOR: graphics::Color = graphics::Color::new(56.0/255.0, 66.0/2
 const BOTTOM_LINE_CORDS: &[mint::Point2<f32>] = &[(mint::Point2 {x: 0.0, y: 667.0}), (mint::Point2 {x: 1280.0, y: 667.0})];
 const MIDDLE_LINE_CORDS: &[mint::Point2<f32>] = &[(mint::Point2 {x: 602.0, y: 667.0}), (mint::Point2 {x: 602.0, y: 720.0})];
 
-const INITIAL_TIME_TO_SPAWN: f32 = 2.0;
-const INITIAL_WORD_SPEED: f32 = 1.0;
-const SPEED_PER_LEVEL: f32 = 0.15;
-const TIME_PER_LEVEL: f32 = 1.3;
+const INITIAL_TIME_TO_SPAWN: f32 = 2.5;
+const INITIAL_WORD_SPEED: f32 = 0.7;
+const SPEED_PER_LEVEL: f32 = 0.30;
+const TIME_PER_LEVEL: f32 = 1.5;
 
 const ENTER: char = 13 as char;
 const BACKSPACE: char = 127 as char;
@@ -125,7 +125,6 @@ impl event::EventHandler for GameState {
                 self.level += 1;
                 self.seconds_to_spawn /= TIME_PER_LEVEL as f32;
                 self.words_speed += SPEED_PER_LEVEL as f32;
-                println!("Seconds: {}, speed: {}", self.seconds_to_spawn, self.words_speed);
             }
 
             if Instant::now().duration_since(self.last_update) > Duration::from_secs_f32(self.seconds_to_spawn) {
@@ -168,7 +167,6 @@ impl event::EventHandler for GameState {
     }
 
     fn text_input_event(&mut self, _context: &mut Context, ch: char) {
-        println!("{}", ch as i32);
         if ch == BACKSPACE {
             self.entered_word.associated_string.pop();
         } else if ch != ENTER as char && self.entered_word.associated_string.len() < 16 {
