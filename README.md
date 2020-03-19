@@ -9,6 +9,6 @@ To run the game:
 2. Go into game folder
 3. Run command `cargo run --release`
 
-![Image description](https://ibb.co/25G17XQ)
+![Image description](Play.png)
 
-![Image description](https://ibb.co/Hx2R0ck)
+![Image description](GameOver.png)
