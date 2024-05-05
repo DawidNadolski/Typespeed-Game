@@ -1,6 +1,6 @@
 # Typespeed Game
 
-Game in which you have to type aproaching words. You have 10 lives and each 100 score points you achieve next level in which words are coming up more frequently and are moving faster.
+Game in which you have to type aproaching words. You have 10 lives and each 100 score points you achieve the words are moving faster.
 
 Press Enter to submit the typed word!
 
